@@ -266,7 +266,6 @@
             app:layout_constraintTop_toBottomOf="@+id/expirydate"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="@string/mastercard"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
 

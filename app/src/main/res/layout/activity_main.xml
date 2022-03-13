@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv_personal_nformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/personal_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            app:boxBackgroundColor="@color/colorLightGray"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:errorIconTint="@color/colorRed"
+            app:errorTextAppearance="@style/ErrorText"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_personal_nformation">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/secondname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:boxBackgroundColor="@color/colorLightGray"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:errorIconTint="@color/colorRed"
+            app:errorTextAppearance="@style/ErrorText"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_second_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="@string/second_name"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/zipcode"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/colorLightGray"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:errorIconTint="@color/colorRed"
+            app:errorTextAppearance="@style/ErrorText"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@+id/secondname"
+            app:layout_constraintTop_toBottomOf="@+id/secondname">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_zipcode"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="@string/zipcode"
+                android:inputType="number"
+                android:maxLength="5"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            app:layout_constraintBottom_toBottomOf="@+id/zipcode"
+            app:layout_constraintEnd_toEndOf="@+id/secondname"
+            app:layout_constraintTop_toBottomOf="@+id/secondname"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_card_nformation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/card_information"
+            app:layout_constraintEnd_toEndOf="@+id/secondname"
+            app:layout_constraintStart_toStartOf="@+id/secondname"
+            app:layout_constraintTop_toBottomOf="@id/zipcode" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/creditcard"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="06dp"
+            android:layout_marginEnd="24dp"
+            app:boxBackgroundColor="@color/colorLightGray"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:errorIconTint="@color/colorRed"
+            app:errorTextAppearance="@style/ErrorText"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_card_nformation">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_credit_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="@string/card_number"
+                android:inputType="number"
+                android:maxLength="16"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/expirydate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/colorLightGray"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:errorIconTint="@color/colorRed"
+            app:errorTextAppearance="@style/ErrorText"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@+id/creditcard"
+            app:layout_constraintTop_toBottomOf="@+id/creditcard">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_expirydate"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789/"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="@string/expiry_date"
+                android:inputType="number"
+                android:maxLength="5"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cvv"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/colorLightGray"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:errorIconTint="@color/colorRed"
+            app:errorTextAppearance="@style/ErrorText"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/creditcard"
+            app:layout_constraintLeft_toRightOf="@+id/expirydate"
+            app:layout_constraintTop_toBottomOf="@+id/creditcard">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_cvv"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="@string/cvv_code"
+                android:inputType="number"
+                android:maxLength="4"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/card_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/expirydate"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/mastercard"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/trasaction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/transaction"
+            app:layout_constraintEnd_toEndOf="@+id/cvv"
+            app:layout_constraintStart_toStartOf="@+id/expirydate"
+            app:layout_constraintTop_toBottomOf="@+id/card_info" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

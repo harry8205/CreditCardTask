@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Credit Card Task</string>
+    <string name="peronalinfo">Personal Information</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="first_name">First Name</string>
+    <string name="mastercard">MasterCard</string>
+    <string name="second_name">Second Name</string>
+    <string name="zipcode">Zipcode</string>
+    <string name="card_information">Card Information</string>
+    <string name="card_number">Card Number</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="cvv_code">CVV Code</string>
+    <string name="transaction">Transaction</string>
+</resources>

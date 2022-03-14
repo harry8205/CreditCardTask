@@ -1,7 +1,9 @@
 package com.example.creditcardtask;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -205,8 +207,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             if (checkDigit == 3 && cardlenght == 15) {
                 Toast.makeText(this, "You have American Express Card", Toast.LENGTH_LONG).show();
                 textView.setText("You have American Express Card");
+                showAlert("Transaction successful.");
             } else {
                 Toast.makeText(this, "Either CVV or Card Number is invalid", Toast.LENGTH_LONG).show();
+                showAlert("Either CVV or Card Number is invalid");
             }
 
         } else if (cvvnumber == 3) {
@@ -214,23 +218,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (checkDigit == 4) {
                     textView.setText("You have Visa Card");
                     Toast.makeText(this, "You have Visa Card", Toast.LENGTH_LONG).show();
+                    showAlert("Transaction successful.");
 
                 } else if (checkDigit == 5) {
                     textView.setText("You have Master Card");
                     Toast.makeText(this, "You have master Card", Toast.LENGTH_LONG).show();
+                    showAlert("Transaction successful.");
                 } else if (checkDigit == 6) {
                     textView.setText("You have Discover Card");
-                    Toast.makeText(this, "you have Discover card", Toast.LENGTH_LONG).show();
+                    showAlert("Transaction successful.");
+                    Toast.makeText(this, "You have Discover card", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(this, "Card number info invalid", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Either CVV or Card Number is invalid", Toast.LENGTH_LONG).show();
+                    showAlert("Either Card Number or CVV is invalid.");
                 }
             } else if (cardlenght == 13) {
                 if (checkDigit == 4) {
                     textView.setText("You have Visa Card");
                     Toast.makeText(this, "You have Visa Card", Toast.LENGTH_LONG).show();
+                    showAlert("Transaction successful.");
                 }
             } else {
                 Toast.makeText(this, "Card number info invalid", Toast.LENGTH_LONG).show();
+                showAlert("Either CVV or Card Number is invalid.");
             }
         }
     }
@@ -238,11 +248,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         Countries item = (Countries) parent.getSelectedItem();
-        Toast.makeText(this, item.getCountryName(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    private void showAlert(String s)
+    {
+        AlertDialog success = new AlertDialog.Builder(MainActivity.this).setTitle("Message").setMessage(s)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create();
+        success.show();
     }
 
 
